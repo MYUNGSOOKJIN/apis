@@ -45,10 +45,10 @@ app.get('/pet', function (req, res) {   // (req, res) => {res.send('Pet Shoppppi
 app.get('/sound/:name', (req, res) => {
     const {name} = req.params;
     console.log(name)
-     res.json({ 'sound': '냐옹' });
+     res.json({ 'sound': '냐옹' , 'name':'야옹'});
 });
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/main.html');
-});
+// app.get('/', function (req, res) {
+//     res.sendFile(__dirname + '/main.html');
+// });
 
