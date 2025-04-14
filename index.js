@@ -42,17 +42,15 @@ app.get('/pet', function (req, res) {   // (req, res) => {res.send('Pet Shoppppi
         res.json({ 'sound': '냐옹옹' });
 }); */
 
-app.get('/sound/:name', (req, res) => {
-    const {name} = req.params;
-    console.log(name)
-     res.json({ 'sound': '냐옹' , 'name':'야옹'});
-});
-
-app.get('/sound/:name', (req, res) => {
-    const {name} = req.params;
-    console.log(name)
-     res.json({ 'sound': '냐옹' , 'name':'야옹'});
-});
+app.get('/pet/:name', (req, res) => {
+    const p = req.params;
+    if (p.name == 'json1')
+        res.json({ 'sound': '멍멍' });
+    if (p.name == 'json2')
+        res.json({'dog':{ 'name': '조이',  'sound': '낑낑' }});
+    if (p.name == 'json3')
+        res.json({ 'dogs' : [{'name': '조이',  'sound': '낑낑'}, {'name': '로이',  'sound': '우프'}] });
+}); 
 
 app.get('/', function (req, res) {
    res.sendFile(__dirname + '/main.html');
