@@ -48,7 +48,13 @@ app.get('/sound/:name', (req, res) => {
      res.json({ 'sound': '냐옹' , 'name':'야옹'});
 });
 
-// app.get('/', function (req, res) {
-//     res.sendFile(__dirname + '/main.html');
-// });
+app.get('/sound/:name', (req, res) => {
+    const {name} = req.params;
+    console.log(name)
+     res.json({ 'sound': '냐옹' , 'name':'야옹'});
+});
+
+app.get('/', function (req, res) {
+   res.sendFile(__dirname + '/main.html');
+ });
 
